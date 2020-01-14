@@ -1,0 +1,216 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title:  鲁先生的个人博客
+subtitle: 生活掺点技术，犹如咖啡拌点糖
+name: 鲁先生 
+email: allen_lu_hh@163.com
+description: 本站是鲁先生的分享博客。内容涵盖生活故事、兴趣培养、赚钱能力培养、Java后端技术、devops技术等相关的研究与知识分享。
+keywords: hanlinsir,鲁先生,Spring,Spring Boot,Spring Cloud,linux,Docker,k8s,生活故事,兴趣爱好,一线,开发者,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,IT技术博客,Java,Python,Golang,
+encoding: "utf-8"
+favicon: favicon.ico 
+
+repository: hanlinsir/hanlinsir.github.io
+github_url: https://github.com/hanlinsir
+url: http://www.hanlinsir.com
+# enforce_ssl: hanlinsir.com
+
+## Gem
+plugins:
+  - jekyll-paginate
+  - jekyll-geo-pattern
+  - rouge
+  - kramdown
+  - jekyll-github-metadata
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+lsi:         false
+excerpt_separator: "\n\n"
+
+source:      .
+destination: ./_site
+
+quiet:    false
+defaults: []
+
+kramdown:
+  input: GFM
+  enable_coderay: true
+  syntax_highlighter: rouge
+
+syntax_highlighter_opts:
+   coderay_line_numbers:  nil
+
+# Pagination
+paginate: 12
+paginate_path: 'page:num'
+
+# Navigation. top menu list
+menus:
+
+  -
+    href: /money.html
+    label: 赚钱
+    target: _self   
+
+  -
+    href: /life.html
+    label: 胡话
+    target: _self
+
+  -
+    href: /arch.html
+    label: 转载
+    target: _self
+
+  -
+    href: /link.html
+    label: 友链
+    target: _self
+
+  -
+    href: /about.html
+    label: 关于
+    target: _self
+
+# Navigation. main menu list
+navs:
+
+  -
+    href: /
+    label: Home
+
+  -
+    href: /spring-cloud.html
+    label: Spring Cloud
+    target: _self
+
+  -
+    
+    href: /devops.html
+    label: devops
+    target: _blank
+    subnav:
+
+      -
+        subHref: /network.html
+        subLabel: 网络相关
+        
+      -
+        subHref: /linux.html
+        subLabel: linux相关
+        target: _blank
+      -
+        subHref: /docker.html
+        subLabel: docker相关
+        target: _blank
+
+  -
+    href: /archives.html
+    label: Archives
+    target: _self
+
+
+
+# labels. my blog key words
+labels:
+
+  -
+    href: /linux.html
+    label: linux     
+    target: _self
+
+  -
+    href: /docker.html
+    label: Docker
+    target: _blank
+
+  -
+    href: /k8s.html
+    label: k8s
+    target: _blank
+
+  -
+    href: /money.html
+    label: money
+    target: _blank
+
+# selected articles
+classes:
+
+  -
+    href: /life.html
+    name: 我的故事
+    describe: 陈坛老酒，越品越有味
+
+  -
+    href: /it.html
+    name: 大事件
+    describe: 搜罗技术好文，阅品未来之美
+
+  -
+    href: /it.html
+    name: 趣事
+    describe: 好玩的，才过瘾
+
+
+  -
+    href: /devops.html
+    name: DEVOPS
+    describe: 一个小菜鸟的自我修养
+
+
+# ---------------- #
+#       RSS        #
+# ---------------- #
+subscribe_rss: /feed.xml
+
+# Sidebar to show popular repo
+side_bar_repo_limit: 6 # Number of repos to show
+
+# Google Analytics
+# analytics :
+# provider : google
+#   google :
+#     tracking_id : ''  # ex. UA-72165600-X
+
+
+# For about.html. Fell free to create your own!
+skill_software_keywords: [Java, MySQL, Oracle, Design Patterns]
+skill_j2ee_keywords: [Spring, Struct, Hibernet, MyBatis, JSP]
+skill_web_keywords: [HTML, CSS, JS, JQuery, Ajax, NodeJS, ExpressJS, MongoDB, Redis, PHP,  Boostrap]
+skill_mobile_app_keywords: [vuejs, hyhird app]
+
+
+# ---------------- #
+#      Comments    #
+# ---------------- #
+# support provider: disqus, gitment, gitalk
+comments_provider: gitalk
+# !!!重要!!! 请修改下面这些信息为你自己申请的
+# !!!Important!!! Please modify infos below to yours
+# https://disqus.com
+disqus:
+    username: hanlinsir
+# https://imsun.net/posts/gitment-introduction/
+gitment:
+    owner: luhanlin
+    repo: blog-comments
+    oauth:
+        client_id: fc1885ed62d67f97019e
+        client_secret: 946b48e3d997d11f9c634258f70f57d3521b48af
+# https://github.com/gitalk/gitalk#install
+gitalk:
+    owner: luhanlin
+    repo: blog-comments
+    clientID: fc1885ed62d67f97019e
+    clientSecret: 946b48e3d997d11f9c634258f70f57d3521b48af
+# 在使用其它评论组件时可点击显示 Disqus
+lazy_load_disqus : true
