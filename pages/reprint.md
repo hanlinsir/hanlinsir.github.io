@@ -1,11 +1,11 @@
 ---
 layout: page
-title: 不会笑青年
-titlebar: cartoon
-subtitle: <span class="mega-octicon octicon-organization"></span>&nbsp;&nbsp; 用漫画讲故事
-menu: cartoon
+title: 转载
+titlebar: reprint
+subtitle: <span class="mega-octicon octicon-keyboard"></span>&nbsp;&nbsp; 转载好文
+menu: reprint
 css: ['blog-page.css']
-permalink: /cartoon
+permalink: /reprint
 ---
 
 <div class="row">
@@ -14,7 +14,7 @@ permalink: /cartoon
 
         <ul id="posts-list">
             {% for post in site.posts %}
-                {% if post.category=='cartoon' %}
+                {% if post.category=='reprint' or post.keywords contains 'reprint' %}
                 <li class="posts-list-item">
                     <div class="posts-content">
                         <span class="posts-list-meta">{{ post.date | date: "%Y-%m-%d" }}</span>

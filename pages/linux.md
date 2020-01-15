@@ -1,11 +1,11 @@
 ---
 layout: page
-title: 知识星球
-titlebar: zsxq
-subtitle: <span class="mega-octicon octicon-keyboard"></span>&nbsp;&nbsp;探索创业、黑客增长、营销策略、创意分享、商业案例等。>&nbsp;&nbsp;>&nbsp;&nbsp;<a href ="https://t.zsxq.com/iYZ3zrR" target="_blank" ><font color="#EB9439">点我直达</font></a>
-menu: zsxq
+title: Linux系列文章
+titlebar: linux
+subtitle: <span class="mega-octicon octicon-clippy"></span>&nbsp;&nbsp; linux系列文章
+menu: linux
 css: ['blog-page.css']
-permalink: /zsxq
+permalink: /linux
 ---
 
 <div class="row">
@@ -14,7 +14,7 @@ permalink: /zsxq
 
         <ul id="posts-list">
             {% for post in site.posts %}
-                {% if post.category=='zsxq' or post.keywords contains 'money' %}
+                {% if post.category=='linux' or post.keywords contains 'linux' %}
                 <li class="posts-list-item">
                     <div class="posts-content">
                         <span class="posts-list-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
@@ -44,4 +44,3 @@ permalink: /zsxq
 
     });
 </script>
-

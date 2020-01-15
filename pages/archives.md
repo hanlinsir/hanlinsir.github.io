@@ -2,7 +2,7 @@
 layout: page
 title: All articles are here
 titlebar: archives
-subtitle: <span class="mega-octicon octicon-calendar"></span>&nbsp;&nbsp;专题系列： &nbsp;&nbsp; <a href ="http://www.hanlinsir.com/life.html"><font color="#1A0DAB">故事</font></a>&nbsp;&nbsp; <a href ="http://www.hanlinsir.com/life.html"><font color="#EB9439">趣事</font></a>&nbsp;&nbsp; <a href ="http://www.hanlinsir.com/devops.html"><font color="#1E90FF">Devops</font></a>
+subtitle: <span class="mega-octicon octicon-calendar"></span>&nbsp;&nbsp;专题系列： &nbsp;&nbsp; <a href ="http://www.hanlinsir.com/life.html"><font color="#1A0DAB">我的故事</font></a>&nbsp;&nbsp; <a href ="http://www.hanlinsir.com/life.html"><font color="#EB9439">趣事</font></a>&nbsp;&nbsp; <a href ="http://www.hanlinsir.com/devops.html"><font color="#1E90FF">Devops</font></a>
 menu: archives
 css: ['blog-page.css']
 permalink: /archives.html

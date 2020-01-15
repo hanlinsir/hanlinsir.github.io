@@ -66,7 +66,7 @@ menus:
     target: _self
 
   -
-    href: /arch.html
+    href: /reprint.html
     label: 转载
     target: _self
 
@@ -88,8 +88,8 @@ navs:
     label: Home
 
   -
-    href: /spring-cloud.html
-    label: Spring Cloud
+    href: /architecture.html
+    label: 架构之路
     target: _self
 
   -
@@ -130,11 +130,6 @@ labels:
   -
     href: /docker.html
     label: Docker
-    target: _blank
-
-  -
-    href: /k8s.html
-    label: k8s
     target: _blank
 
   -
