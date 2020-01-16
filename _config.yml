@@ -88,8 +88,8 @@ navs:
     label: Home
 
   -
-    href: /architecture.html
-    label: 架构之路
+    href: /knowledge.html
+    label: 生活冷知识
     target: _self
 
   -
