@@ -86,7 +86,7 @@ public class SynchronizedDemo {
 
 #### 3.2 探究 Jvm 源码实现
 
-当我们在 Java 代码中，使用 new 创建一个对象实例的时候，（hotspot 虚拟机）JVM 层面实际上会创建一个instanceOopDesc 对象。Hotspot 虚拟机采用 OOP-Klass 模型来描述 Java 对象实例，OOP(Ordinary Object Point)指的是普通对象指针，Klass 用来描述对象实例的具体类型。Hotspot 采用*instanceOopDesc 和 arrayOopDesc 来 描述对象 头，arrayOopDesc 对象用来描述数组类型 *instanceOopDesc* 的定义在 Hotspot 源 码 中 的instanceOop.hpp 文件中，另外，arrayOopDesc 的定义对应 arrayOop.hpp。
+当我们在 Java 代码中，使用 new 创建一个对象实例的时候，（hotspot 虚拟机）JVM 层面实际上会创建一个instanceOopDesc 对象。Hotspot 虚拟机采用 OOP-Klass 模型来描述 Java 对象实例，OOP(Ordinary Object Point)指的是普通对象指针，Klass 用来描述对象实例的具体类型。Hotspot 采用instanceOopDesc 和 arrayOopDesc 来 描述对象 头，arrayOopDesc 对象用来描述数组类型 *instanceOopDesc* 的定义在 Hotspot 源 码 中 的instanceOop.hpp 文件中，另外，arrayOopDesc 的定义对应 arrayOop.hpp。
 
 ```c++
 #ifndef SHARE_VM_OOPS_INSTANCEOOP_HPP
