@@ -4,8 +4,3 @@
 
 
 访问地址：[http://www.hanlinsir.com/](http://www.hanlinsir.com/)
-
-
-## 我的京东小店
-
-![东小店](http://www.hanlinsir.com/assets/images/dongxiaodian.jpeg)

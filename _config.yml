@@ -56,8 +56,8 @@ paginate_path: 'page:num'
 menus:
 
   -
-    href: /money.html
-    label: 赚钱
+    href: /java.html
+    label: JAVA
     target: _self   
 
   -
@@ -93,12 +93,10 @@ navs:
     target: _self
 
   -
-    
     href: /devops.html
-    label: devops
+    label: DEVOPS
     target: _blank
     subnav:
-
       -
         subHref: /network.html
         subLabel: 网络相关
@@ -113,6 +111,24 @@ navs:
         target: _blank
 
   -
+    href: /it.html
+    label: 互联网
+    target: _blank
+    subnav:
+      -
+        subHref: /java.html
+        subLabel: JAVA
+        
+      -
+        subHref: /python.html
+        subLabel: PYTHON
+        target: _blank
+      -
+        subHref: /golang.html
+        subLabel: GOLANG
+        target: _blank
+
+  -
     href: /archives.html
     label: Archives
     target: _self
@@ -123,8 +139,8 @@ navs:
 labels:
 
   -
-    href: /linux.html
-    label: linux     
+    href: /java.html
+    label: JAVA     
     target: _self
 
   -
@@ -151,14 +167,14 @@ classes:
     describe: 搜罗技术好文，阅品未来之美
 
   -
-    href: /it.html
-    name: 趣事
+    href: /java.html
+    name: JAVA菜鸟系列
     describe: 好玩的，才过瘾
 
 
   -
     href: /devops.html
-    name: DEVOPS
+    name: DEVOPS系列
     describe: 一个小菜鸟的自我修养
 
 
