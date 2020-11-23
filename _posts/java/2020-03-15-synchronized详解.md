@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  synchronized详解
+title:  多线程之synchronized详解
 category: java
 copyright: java
 ---
