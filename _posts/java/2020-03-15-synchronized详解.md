@@ -16,7 +16,7 @@ copyright: java
 
 <!--more-->
 
-### 1. synchronized 的基本语法
+## 1. synchronized 的基本语法
 
 synchronized 有三种方式来加锁，分别是：
 
@@ -30,7 +30,7 @@ synchronized 有三种方式来加锁，分别是：
 
 
 
-### 2. synchronized 的应用
+## 2. synchronized 的应用
 
 举一个简单的例子，使用 *synchronized*  实现数据的安全性, 如下示例中每次的计算结果总是为 *1000*。
 
@@ -64,7 +64,7 @@ public class SynchronizedDemo {
 
 
 
-### 3. 思考锁的存储
+## 3. 思考锁的存储
 
 **可以思考一下，要实现多线程的互斥特性，那这把锁需要哪些因素？**
 
@@ -76,7 +76,7 @@ public class SynchronizedDemo {
 
 那么我们来分析，synchronized 锁是如何存储的呢？观察的整个语法发现，*synchronized(lock)* 是基于*lock* 这个对象的生命周期来控制锁粒度的，那是不是锁的存储和这个 lock 对象有关系呢？于是我们以对象在 jvm 内存中是如何存储作为切入点，去看看对象里面有什么特性能够实现锁。
 
-#### 3.1 对象在内存中的布局
+### 3.1 对象在内存中的布局
 
 在 Hotspot 虚拟机中，对象在内存中的存储布局，可以分为三个区域:对象头(Header)、实例数据(Instance Data)、对齐填充(Padding),如图所示：
 
@@ -84,7 +84,7 @@ public class SynchronizedDemo {
 
 
 
-#### 3.2 探究 Jvm 源码实现
+### 3.2 探究 Jvm 源码实现
 
 当我们在 Java 代码中，使用 new 创建一个对象实例的时候，（hotspot 虚拟机）JVM 层面实际上会创建一个instanceOopDesc 对象。Hotspot 虚拟机采用 OOP-Klass 模型来描述 Java 对象实例，OOP(Ordinary Object Point)指的是普通对象指针，Klass 用来描述对象实例的具体类型。Hotspot 采用instanceOopDesc 和 arrayOopDesc 来 描述对象 头，arrayOopDesc 对象用来描述数组类型 *instanceOopDesc* 的定义在 Hotspot 源 码 中 的instanceOop.hpp 文件中，另外，arrayOopDesc 的定义对应 arrayOop.hpp。
 
@@ -199,13 +199,13 @@ Mark word 记录了对象和锁有关的信息，当某个对象被synchronized 
 
 
 
-### 4. synchronized 锁的升级
+## 4. synchronized 锁的升级
 
 在分析 markword 时，提到了偏向锁、轻量级锁、重量级锁。在分析这几种锁的区别时，我们先来思考一个问题使用锁能够实现数据的安全性，但是会带来性能的下降。不使用锁能够基于线程并行提升程序性能，但是却不能保证线程安全性。这两者之间似乎是没有办法达到既能满足性能也能满足安全性的要求。
 
 hotspot 虚拟机的作者经过调查发现，大部分情况下，加锁的代码不存在多线程的竞争，而且总是由同一个线程多次获得。所以基于这样一个概率，是的 synchronized 在JDK1.6 之后做了一些优化，为了减少获得锁和释放锁带来的性能开销，引入了偏向锁、轻量级锁的概念。因此大家会发现在 synchronized 中，锁存在四种状态分别是：**无锁、偏向锁、轻量级锁、重量级锁**，根据竞争激烈的程度从低到高不断升级。
 
-#### 4.1 偏向锁的基本原理
+### 4.1 偏向锁的基本原理
 
 前面说过，大部分情况下，锁不存在多线程的竞争，而是总是由同一个线程多次获得，为了让线程获取锁的代价更低就引入了偏向锁的概念。怎么理解偏向锁呢？
 
@@ -246,7 +246,7 @@ hotspot 虚拟机的作者经过调查发现，大部分情况下，加锁的代
 
 
 
-#### 4.2 轻量级锁的基本原理
+### 4.2 轻量级锁的基本原理
 
 - **轻量级锁的加锁**
 
@@ -282,7 +282,7 @@ hotspot 虚拟机的作者经过调查发现，大部分情况下，加锁的代
 
 
 
-#### 4.3 重量级锁的基本原理
+### 4.3 重量级锁的基本原理
 
 当轻量级锁膨胀到重量级锁之后，意味着线程只能被挂起阻塞来等待被唤醒了。
 
@@ -353,11 +353,11 @@ public class com.hanlinsir.concurrent.thread04_synchronized.App {
 
 
 
-### 5. Synchronized 结合wait,notify,notifyAll
+## 5. Synchronized 结合wait,notify,notifyAll
 
 Synchronized锁定代码，被阻塞的线程什么时候被唤醒，取决于获得锁的线程什么时候执行完同步代码块并且释放锁。那怎么做到显示控制呢？我们就需要借助一个信号机制：wait/notify/notifyall，可以用于控制线程的状态。
 
-#### 5.1 wait/notify/notifyall 基本概念
+### 5.1 wait/notify/notifyall 基本概念
 
 - **wait**：表示持有对象锁的线程 A 准备释放对象锁权限，释放 cpu 资源并进入等待状态。
 - **notify**：表示持有对象锁的线程 A 准备释放对象锁权限，通知 jvm 唤醒摸个竞争锁的线程X 。 线 程 A synchronized 代码执行结束并且释放了锁之后，线程 X 直接获得对象锁权限，其他竞争线程继续等待(即使线程 X 同步完毕，释放对象锁，其他竞争线程仍然等待，直至有新的 notify ,notifyAll 被调用)。
@@ -366,7 +366,7 @@ Synchronized锁定代码，被阻塞的线程什么时候被唤醒，取决于�
 
 >需要注意的是：三个方法都必须在 synchronized 同步关键字 所 限 定 的 作 用 域 中 调 用 ， 否 则 会 报 错 <u>java.lang.IllegalMonitorStateException</u> ，意思是因为没有同步，所以线程对对象锁的状态是不确定的，不能调用这些方法。另外，通过同步机制来确保线程从 wait 方法返回时能够感知到感知到 notify 线程对变量做出的修改。
 
-#### 5.2 wait/notify 的基本使用
+### 5.2 wait/notify 的基本使用
 
 - ThreadA
 
