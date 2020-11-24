@@ -66,7 +66,7 @@ netstat -ant|awk '/^tcp/ {++state[$NF]} END {for(key in state) print (key,state[
 
 结果显示如下：
 
-```java
+```
 LISTEN 70
 CLOSE_WAIT 1
 ESTABLISHED 283
@@ -94,7 +94,7 @@ LAST_ACK：等待所有分组死掉
 
 编辑内核文件/etc/sysctl.conf，打开系统的TIMEWAIT重用和快速回收，加入以下内容：
 
-```java
+```
 net.ipv4.tcp_syncookies = 1 表示开启SYN Cookies。当出现SYN等待队列溢出时，启用cookies来处理，可防范少量SYN攻击，默认为0，表示关闭；
 net.ipv4.tcp_tw_reuse = 1 表示开启重用。允许将TIME-WAIT sockets重新用于新的TCP连接，默认为0，表示关闭；
 net.ipv4.tcp_tw_recycle = 1 表示开启TCP连接中TIME-WAIT sockets的快速回收，默认为0，表示关闭。
@@ -107,7 +107,7 @@ net.ipv4.tcp_fin_timeout 修改系默认的 TIMEOUT 时间
 
 如果性能不太理想，加入如下配置尝试：
 
-```java
+```
 net.ipv4.tcp_keepalive_time = 1200 
 #表示当keepalive起用的时候，TCP发送keepalive消息的频度。缺省是2小时，改为20分钟。
 net.ipv4.ip_local_port_range = 1024 65000 
