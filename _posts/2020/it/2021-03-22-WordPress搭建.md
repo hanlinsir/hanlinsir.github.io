@@ -1,9 +1,11 @@
-> layout: post
-> title:  WordPress 搭建
-> category: it
-> copyright: it
-> tags: [life]
-> excerpt: 感受下 WP 的新鲜，但遗憾的就是尝试，没有投入使用。
+---
+layout: post
+title:  WordPress 搭建
+category: it
+copyright: it
+tags: [life]
+excerpt: 感受下 WP 的新鲜，但遗憾的就是尝试，没有投入使用。
+---
 
 
 
